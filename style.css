@@ -815,11 +815,29 @@ footer {
 }
 @media (max-width: 560px) {
   .porque-grid { grid-template-columns: 1fr; }
-  .proceso-steps { grid-template-columns: 1fr; }
+  .proceso-steps { grid-template-columns: 1fr; gap: 1.5rem; }
   .blog-grid { grid-template-columns: 1fr; }
   .blog-card.featured { grid-column: span 1; }
   .galeria-grid { grid-template-columns: 1fr; }
   .gal-item:first-child { grid-column: span 1; }
   section { padding: 4rem 6%; }
   .raza-banner { flex-direction: column; }
+
+  .paso {
+    padding: 0 1.2rem;
+  }
+  .paso-num {
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+  }
+  .paso-icon {
+    margin-bottom: 0.1rem;
+  }
+  .paso-duration {
+    margin-top: 0.5rem;
+    padding: 0.35rem 1rem;
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+  }
 }
+
