@@ -806,7 +806,8 @@ footer {
   }
   nav.nav-open .nav-links li:last-child a { border-bottom: none; }
 
-  .hero-stat { padding: 1rem 1.5rem; }
+  .hero-stat { padding: 0.75rem 1.2rem; }
+  .hero-stat-num { font-size: 1.7rem; }
   .novillas-ficha { grid-template-columns: 1fr; }
   .blog-grid { grid-template-columns: 1fr 1fr; }
   .blog-card.featured { grid-column: span 2; grid-row: auto; }
@@ -822,6 +823,16 @@ footer {
   .gal-item:first-child { grid-column: span 1; }
   section { padding: 4rem 6%; }
   .raza-banner { flex-direction: column; }
+
+  /* Hero: evitar solapamiento con la barra de stats */
+  .hero { padding-bottom: 140px; }
+  .hero-stat { padding: 0.55rem 0.9rem; }
+  .hero-stat-num { font-size: 1.4rem; }
+  .hero-stat-label { font-size: 0.62rem; }
+
+  /* Contacto: wa-badge pasa a la línea de abajo */
+  .contacto-persona { flex-wrap: wrap; }
+  .wa-badge { margin-left: 0; width: 100%; text-align: center; margin-top: 0.6rem; padding: 0.5rem 1rem; }
 
   .paso {
     padding: 0 1.2rem;
