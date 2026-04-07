@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="theme-color" content="#3B2A1A">
+  <title>Gastos — Finca Mi Tesoro</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Lora:wght@400;500&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="gastos.css">
+</head>
+<body>
+
+  <!-- ── BARRA SUPERIOR FIJA ───────────────────── -->
+  <header class="topbar">
+    <div class="topbar-title">
+      <a href="index.html" class="topbar-back" title="Volver al sitio">←</a>
+      <span class="topbar-icon">🐄</span>
+      <span>Gastos</span>
+    </div>
+    <div class="rate-widget">
+      <span class="rate-label">$1 =</span>
+      <input type="number" id="exchangeRate" value="3600" min="1" step="1" inputmode="numeric">
+      <span class="rate-unit">Bs</span>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- ── SECCIÓN EMPLEADOS ─────────────────────── -->
+    <section class="card" id="sec-employees">
+
+      <div class="card-head">
+        <div class="card-head-left">
+          <span class="card-emoji">👷</span>
+          <div>
+            <h2 class="card-title">Empleados</h2>
+            <p class="card-sub">Monto en moneda local</p>
+          </div>
+        </div>
+        <div class="card-subtotal">
+          <span class="subtotal-label">subtotal</span>
+          <span class="subtotal-usd" id="emp-subtotal-usd">$0.00</span>
+          <span class="subtotal-local" id="emp-subtotal-local">0 local</span>
+        </div>
+      </div>
+
+      <div class="item-list" id="emp-list">
+        <!-- filas inyectadas por JS -->
+      </div>
+
+      <button class="btn-add" id="btn-add-employee">
+        <span class="btn-add-icon">＋</span> Agregar empleado
+      </button>
+
+      <div class="fee-strip">
+        <span class="fee-strip-label">Recargo / comisión</span>
+        <div class="fee-strip-right">
+          <div class="fee-input-wrap">
+            <input type="number" id="emp-fee" value="5" min="0" max="100" step="0.1" inputmode="decimal">
+            <span class="fee-pct-sign">%</span>
+          </div>
+          <span class="fee-result" id="emp-fee-amt">$0.00</span>
+        </div>
+      </div>
+
+    </section>
+
+    <div class="plus-divider">+</div>
+
+    <!-- ── SECCIÓN MATERIALES ────────────────────── -->
+    <section class="card" id="sec-materials">
+
+      <div class="card-head">
+        <div class="card-head-left">
+          <span class="card-emoji">🔧</span>
+          <div>
+            <h2 class="card-title">Materiales</h2>
+            <p class="card-sub">Gasolina, aceite, etc...</p>
+          </div>
+        </div>
+        <div class="card-subtotal">
+          <span class="subtotal-label">subtotal</span>
+          <span class="subtotal-usd" id="mat-subtotal-usd">$0.00</span>
+          <span class="subtotal-local" id="mat-subtotal-local">0 USD base</span>
+        </div>
+      </div>
+
+      <div class="item-list" id="mat-list">
+        <!-- filas inyectadas por JS -->
+      </div>
+
+      <button class="btn-add" id="btn-add-material">
+        <span class="btn-add-icon">＋</span> Agregar material
+      </button>
+
+      <div class="fee-strip">
+        <span class="fee-strip-label">Recargo / comisión</span>
+        <div class="fee-strip-right">
+          <div class="fee-input-wrap">
+            <input type="number" id="mat-fee" value="6" min="0" max="100" step="0.1" inputmode="decimal">
+            <span class="fee-pct-sign">%</span>
+          </div>
+          <span class="fee-result" id="mat-fee-amt">$0.00</span>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ── TOTAL GENERAL ─────────────────────────── -->
+    <div class="total-card">
+      <div class="total-card-top">
+        <span class="total-label">Total General</span>
+        <span class="total-amount" id="grand-total">$0.00</span>
+      </div>
+      <p class="total-formula" id="formula-display">—</p>
+      <p class="total-breakdown" id="grand-breakdown">—</p>
+    </div>
+
+  </main>
+
+  <script src="gastos.js"></script>
+</body>
+</html>
